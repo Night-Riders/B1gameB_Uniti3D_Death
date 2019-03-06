@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BonusObject : MonoBehaviour {
 
+        
         void OnCollisionEnter(Collision col)
         {
             if (col.gameObject.name == "Bonus Time")
@@ -12,5 +13,5 @@ public class BonusObject : MonoBehaviour {
                 Destroy(col.gameObject);
             }
         }
-    
+       
 }
