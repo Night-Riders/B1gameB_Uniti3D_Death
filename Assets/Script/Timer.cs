@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour {
         
     
     TimeGame.text = "Timer :" + TimerGame;
-    TimerGame -= Time.deltaTime/ 2;
+    TimerGame -= Time.deltaTime/ 3;
         if (TimerGame < 0)
         {
             Debug.Log("fin");
