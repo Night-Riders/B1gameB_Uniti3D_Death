@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class BonusObject : MonoBehaviour {
 
-        
-        void OnCollisionEnter(Collision col)
+    public GameObject PLayerCTRL;
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    void OnTriggerEnter(Collider col)
+
+    {
+        if (col.tag == "Colectible")
         {
-            if (col.gameObject.name == "Bonus Time")
-            {
-                Destroy(col.gameObject);
-            }
+            Destroy(PLayerCTRL);
         }
-       
+    }
 }
