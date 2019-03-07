@@ -9,15 +9,17 @@ public class DeathPlay : MonoBehaviour {
     void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-        var v3 = transform.position;
-    //    if ( v3 < 0 )
-            {
-            Destroy(gameObject);
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "Player")
+        {
+            Destroy(col.gameObject);
         }
-		
-	}
+    }
 }

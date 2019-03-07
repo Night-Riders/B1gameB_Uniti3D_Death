@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowCursor : MonoBehaviour {
 
 
-    public float MoveSpeed = 5f;
+    public float MoveSpeed = 3f;
 
 	// Use this for initialization
 	void Start () {
