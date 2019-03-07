@@ -10,6 +10,7 @@ public class Scr_PlayerMovement : MonoBehaviour {
     public float magnetPower;
     private GameObject child;
     public static GameObject player;
+    public float boost;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,14 @@ public class Scr_PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            movementSpeed += boost;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            movementSpeed -= 10;
+        }
     }
 
     public void MagnetIn(Vector3 posMagnetIn, float magnetPower)

@@ -355,7 +355,7 @@ RectTransform:
   m_LocalScale: {x: 9.582302, y: 1.4154125, z: 12190.39}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -403,7 +403,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850fe775aab136d4fa6eaeb1f9cacc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 20
+  followSpeed: 50
+  magnetPower: 1
+  boost: 15
 --- !u!1 &850054056
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +619,7 @@ GameObject:
   - component: {fileID: 1076585139}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,7 +894,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4746382932161380, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1405290603525210, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
       propertyPath: m_Layer

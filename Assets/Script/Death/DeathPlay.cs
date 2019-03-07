@@ -15,11 +15,11 @@ public class DeathPlay : MonoBehaviour {
     {
 
     }
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (col.gameObject.name == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(col.gameObject);
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
