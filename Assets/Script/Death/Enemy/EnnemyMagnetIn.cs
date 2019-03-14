@@ -52,11 +52,11 @@ public class EnnemyMagnetIn : MonoBehaviour
             Destroy(gameObject);
         }
     }
-<<<<<<< HEAD:Assets/Script/Death/Enemy/EnnemyMagnetIn.cs
+
     public void TakeDamage()
     {
+    }
 
-=======
 
     private void Move()
     {
@@ -66,6 +66,5 @@ public class EnnemyMagnetIn : MonoBehaviour
         pos.z += direction.z * speed * Time.deltaTime;
 
         transform.Translate(0, 0, direction.z * speed * Time.deltaTime);
->>>>>>> 1820c36b2c39b97799f553bb3673771c94041016:Assets/Script/Death/EnnemyMagnetIn.cs
     }
 }
