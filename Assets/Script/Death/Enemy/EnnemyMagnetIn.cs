@@ -41,6 +41,7 @@ public class EnnemyMagnetIn : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")){
+            Debug.Log("enculer");
             other.GetComponent<Rigidbody>().AddForce(((transform.position-other.transform.position)*magnetPower*Time.deltaTime)*magnetEffect);
         }
     }
