@@ -31,4 +31,8 @@ public class EnnemyMagnetIn : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void TakeDamage()
+    {
+
+    }
 }

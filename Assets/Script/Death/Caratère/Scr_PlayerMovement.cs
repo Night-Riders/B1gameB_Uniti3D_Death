@@ -11,6 +11,7 @@ public class Scr_PlayerMovement : MonoBehaviour {
     private GameObject child;
     public static GameObject player;
     public float boost;
+    public int Life = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class Scr_PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
         Vector3 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         mousePos.z = transform.position.z + 5;
-        transform.Translate(new Vector3((mousePos.x -0.5f) *magnetPower*followSpeed, 0, 1*movementSpeed)*Time.deltaTime);
+        transform.Translate(new Vector3((mousePos.x -0.5f) *magnetPower*followSpeed, 0, 1*movementSpeed)*Time.deltaTime*Time.timeScale);
     }
 
     private void Update()
