@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathPlay : MonoBehaviour {
 
@@ -19,7 +20,13 @@ public class DeathPlay : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            // Application.LoadLevel(Application.loadedLevel);
+            LoadLevel();
         }
+    }
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(3);
+
     }
 }
