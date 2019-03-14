@@ -987,8 +987,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerValue: 15
   timeText: {fileID: 162457443}
-  Score: 0
   scoreText: {fileID: 797136745}
+  joueur: {fileID: 778482219}
 --- !u!114 &850054058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1623,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4746382932161380, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1405290603525210, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
       propertyPath: m_Layer
@@ -1633,6 +1633,34 @@ Prefab:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1895203493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1001241918}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895203494}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1895203494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1001241918}
+  m_GameObject: {fileID: 1895203493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1940886285
 GameObject:
   m_ObjectHideFlags: 0
