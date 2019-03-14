@@ -514,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerValue: 15
   timeText: {fileID: 162457443}
+  Score: 0
   scoreText: {fileID: 797136745}
 --- !u!114 &850054058
 MonoBehaviour:
