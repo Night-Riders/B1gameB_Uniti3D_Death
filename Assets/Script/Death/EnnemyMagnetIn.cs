@@ -15,6 +15,15 @@ public class EnnemyMagnetIn : MonoBehaviour
 
     void Start()
     {
+        if (Random.value <= 0.5f)
+        {
+            magnetEffect = 1;
+        }
+        else
+        {
+            magnetEffect = -1;
+        }
+
         speed = Random.Range(minSpeed, maxSpeed);
         rgbd = GetComponent<Rigidbody>();
         direction = Vector3.zero;
