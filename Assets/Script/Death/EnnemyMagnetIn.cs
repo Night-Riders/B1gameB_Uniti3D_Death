@@ -6,15 +6,27 @@ public class EnnemyMagnetIn : MonoBehaviour
 {
     public float magnetPower ;
     public int magnetEffect;
+    public float maxSpeed;
+    public float minSpeed;
+    private float speed;
+    private Rigidbody rgbd;
+
+    Vector3 direction;
 
     void Start()
     {
+        speed = Random.Range(minSpeed, maxSpeed);
+        rgbd = GetComponent<Rigidbody>();
+        direction = Vector3.zero;
+    }
 
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     void Update()
     {
-
     }
 
     private void OnTriggerStay(Collider other)
@@ -30,5 +42,15 @@ public class EnnemyMagnetIn : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Move()
+    {
+        direction.z = -1;
+
+        Vector3 pos = rgbd.position;
+        pos.z += direction.z * speed * Time.deltaTime;
+
+        transform.Translate(0, 0, direction.z * speed * Time.deltaTime);
     }
 }
