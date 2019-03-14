@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a7024fbeca237408bc664420d7143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetPower: 110
+  magnetPower: 300
   magnetEffect: 1
 --- !u!135 &135739122451576226
 SphereCollider:
@@ -137,5 +137,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
