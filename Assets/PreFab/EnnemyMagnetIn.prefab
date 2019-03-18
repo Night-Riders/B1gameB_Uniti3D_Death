@@ -98,7 +98,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -128,7 +128,8 @@ MonoBehaviour:
   magnetPower: 300
   magnetEffect: 0
   maxSpeed: 10
-  minSpeed: 0
+  minSpeed: 1
+  lifeTime: 15
 --- !u!135 &135309571364625124
 SphereCollider:
   m_ObjectHideFlags: 1
