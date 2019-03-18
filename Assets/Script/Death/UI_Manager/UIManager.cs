@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public Text scoreText;
 
     public GameObject joueur;
-
+    public int Life = 5;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void AddTenSeconds()
     {
-        currentTimerValue += 10f;
+        timerValue += 10f;
     }
 
         // Update is called once per frame

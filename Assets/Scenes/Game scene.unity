@@ -557,7 +557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7.9}
+  m_AnchoredPosition: {x: 0, y: 4.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &594219549
@@ -842,6 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778482220}
   - component: {fileID: 778482221}
+  - component: {fileID: 778482222}
   m_Layer: 0
   m_Name: PLayerCtrl
   m_TagString: Untagged
@@ -878,7 +879,19 @@ MonoBehaviour:
   followSpeed: 50
   magnetPower: 1
   boost: 15
-  Life: 5
+--- !u!114 &778482222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778482219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4464a31e1eeb04a8b8831f03002ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusPrefab: {fileID: 1405290603525210, guid: 4e4b160fb6e043241b05e028a05ca9b7,
+    type: 2}
 --- !u!1 &797136743
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1002,7 @@ MonoBehaviour:
   timeText: {fileID: 162457443}
   scoreText: {fileID: 797136745}
   joueur: {fileID: 778482219}
+  Life: 5
 --- !u!114 &850054058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1237,7 @@ GameObject:
   - component: {fileID: 1076585141}
   - component: {fileID: 1076585140}
   - component: {fileID: 1076585139}
+  - component: {fileID: 1076585144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1312,6 +1327,19 @@ Transform:
   m_Father: {fileID: 778482220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1076585144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076585138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4464a31e1eeb04a8b8831f03002ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusPrefab: {fileID: 1405290603525210, guid: 4e4b160fb6e043241b05e028a05ca9b7,
+    type: 2}
 --- !u!1 &1366393782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1659,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 114593138843539262, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b160fb6e043241b05e028a05ca9b7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1895203493

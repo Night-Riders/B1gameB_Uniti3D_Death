@@ -29,4 +29,12 @@ public class DeathPlay : MonoBehaviour {
         SceneManager.LoadScene(3);
 
     }
+   /* private void DeathPlayer ()
+    {
+        UIManager uiManager = gameObject.GetComponent<UIManager>();
+            if(Life<0)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }*/
 }

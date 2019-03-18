@@ -11,7 +11,7 @@ public class Scr_PlayerMovement : MonoBehaviour {
     private GameObject child;
     public static GameObject player;
     public float boost;
-    public int Life = 5;
+   
 
 	// Use this for initialization
 	void Start () {

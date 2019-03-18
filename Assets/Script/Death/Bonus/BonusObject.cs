@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BonusObject : MonoBehaviour {
 
-    public GameObject PLayerCTRL;
+
     public GameObject bonusPrefab;
 
     // Use this for initialization
@@ -25,8 +25,9 @@ public class BonusObject : MonoBehaviour {
         {
             uiManager.AddTenSeconds();
             Destroy(gameObject);
-        }
 
+        }
+       
     }
 
 
