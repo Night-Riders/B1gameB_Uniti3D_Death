@@ -60,7 +60,7 @@ public class UIManagerScript : MonoBehaviour
                 currentScoreValue = joueur.transform.position.z;
             }
         }
-    } 
+    }
    
 
 

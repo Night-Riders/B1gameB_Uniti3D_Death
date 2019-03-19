@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnnemyMagnetIn : MonoBehaviour
 {
     public float magnetPower ;
+    public float reflectPower;
     public int magnetEffect;
     public float maxSpeed;
     public float minSpeed;
@@ -25,6 +26,7 @@ public class EnnemyMagnetIn : MonoBehaviour
         else
         {
             magnetEffect = -1;
+            magnetPower = reflectPower;
         }
 
         speed = Random.Range(minSpeed, maxSpeed);
