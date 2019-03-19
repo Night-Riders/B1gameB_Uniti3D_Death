@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void AddTenSeconds()
     {
-        timerValue += 10f;
+        currentTimerValue += 10f;
     }
 
         // Update is called once per frame
