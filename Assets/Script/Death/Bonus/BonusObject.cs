@@ -8,7 +8,7 @@ public class BonusObject : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            UIManager.Singleton.AddTenSeconds();
+            UIManagerScript.Singleton.AddTenSeconds();
             Destroy(gameObject);
 
         }

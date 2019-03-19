@@ -10,11 +10,14 @@ public class EnnemyMagnetIn : MonoBehaviour
     public float minSpeed;
     private float speed;
     private Rigidbody rgbd;
-
+    public float lifeTime;
+    private float startLife;
+    
     Vector3 direction;
 
     void Start()
     {
+
         if (Random.value <= 0.5f)
         {
             magnetEffect = 1;
@@ -36,6 +39,12 @@ public class EnnemyMagnetIn : MonoBehaviour
 
     void Update()
     {
+        startLife += Time.deltaTime;
+
+        if (startLife > lifeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -56,6 +65,7 @@ public class EnnemyMagnetIn : MonoBehaviour
 
     public void TakeDamage()
     {
+
     }
 
 
