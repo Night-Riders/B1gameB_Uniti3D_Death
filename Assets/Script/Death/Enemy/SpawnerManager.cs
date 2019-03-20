@@ -17,7 +17,7 @@ public class SpawnerManager : MonoBehaviour {
     public GameObject UIManager;
     private UIManagerScript UIManagerScript;
     private float currentScore;
-    private float Score = 100;
+    public float Score = 100;
     public GameObject bonusTime;
 
     public float difficulty;

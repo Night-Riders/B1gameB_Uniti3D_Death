@@ -15,7 +15,7 @@ public class SpawnerMovement : MonoBehaviour {
 	void Update () {
         if ((playerTransform.position.z + 10 > transform.position.z))
         {
-            transform.Translate(0, 0, +1);
+            transform.Translate(0, 0, +2);
         }
     }
 }

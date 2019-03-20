@@ -45,13 +45,8 @@ public class UIManagerScript : MonoBehaviour
 
     // Update is called once per frame
 
-    public void AddTenSeconds()
-    {
-        currentTimerValue += 10f;
-    }
-
-        // Update is called once per frame
-        void Update() {
+    // Update is called once per frame
+    void Update() {
             currentTimerValue -= Time.deltaTime;
             timeText.text = currentTimerValue.ToString("Time : " + " 0.0 " + "s");
             IncrementScore();
@@ -108,6 +103,16 @@ public class UIManagerScript : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void AddTenSeconds()
+    {
+        currentTimerValue += 10f;
+    }
+
+    public void MinusFiveSeconds()
+    {
+        currentTimerValue -= 5f;
+    }
 
 } 
    

@@ -7,24 +7,37 @@ public class EnnemyMagnetIn : MonoBehaviour
     public float magnetPower ;
     public float reflectPower;
     public int magnetEffect;
+
     public float maxSpeed;
     public float minSpeed;
     private float speed;
+
     private Rigidbody rgbd;
+
     public float lifeTime;
     private float startLife;
+
+    public GameObject blueModel;
+    public GameObject redModel;
+
+    public GameObject UIManager;
     
     Vector3 direction;
 
     void Start()
     {
+        
+
+        UIManager = GameObject.Find("UI Manager");
 
         if (Random.value <= 0.5f)
         {
+            blueModel.SetActive(false);
             magnetEffect = 1;
         }
         else
         {
+            redModel.SetActive(false);
             magnetEffect = -1;
             magnetPower = reflectPower;
         }
@@ -61,6 +74,7 @@ public class EnnemyMagnetIn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            UIManager.GetComponent<UIManagerScript>().MinusFiveSeconds();
             Destroy(gameObject);
         }
     }
