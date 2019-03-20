@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
@@ -35,7 +36,6 @@ public class UIManager : MonoBehaviour
     {
         currentTimerValue = timerValue;
         Time.timeScale = 1;
-        currentTimerValue = timerValue;
     }
 
     // Update is called once per frame
@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour
             timeText.text = currentTimerValue.ToString("Time : " + " 0.0 " + "s");
             IncrementScore();
             scoreText.text = (currentScoreValue / 2).ToString("Score :" + " 0");
+        DeathTime();
         }
 
         public void IncrementScore()
@@ -60,7 +61,16 @@ public class UIManager : MonoBehaviour
                 currentScoreValue = joueur.transform.position.z;
             }
         }
-    } 
+    public void DeathTime ()
+    {
+        Debug.Log("Batard");
+        if(currentTimerValue<=0f)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
+
+ } 
    
 
 

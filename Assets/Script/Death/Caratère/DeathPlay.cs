@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathPlay : MonoBehaviour {
 
-
+    public GameObject gameManager;
     // Use this for initialization
     void Start () {
 		
@@ -21,14 +21,10 @@ public class DeathPlay : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             // Application.LoadLevel(Application.loadedLevel);
-            LoadLevel();
+            gameManager.GetComponent<GameManager>().Death();
         }
     }
-    public void LoadLevel()
-    {
-        SceneManager.LoadScene(3);
-
-    }
+  
    /* private void DeathPlayer ()
     {
         UIManager uiManager = gameObject.GetComponent<UIManager>();

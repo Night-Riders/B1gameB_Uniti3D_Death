@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIManagerScript : MonoBehaviour
@@ -14,9 +15,11 @@ public class UIManagerScript : MonoBehaviour
 
     public float currentScoreValue = 0f;
     public Text scoreText;
-
-    public GameObject joueur;
+  
+    public GameObject joueur ;
     public int Life = 5;
+   
+    public GameObject gameOverScreen;
 
     private void Awake()
     {
@@ -38,6 +41,8 @@ public class UIManagerScript : MonoBehaviour
         currentTimerValue = timerValue;
     }
 
+
+
     // Update is called once per frame
 
     public void AddTenSeconds()
@@ -51,7 +56,12 @@ public class UIManagerScript : MonoBehaviour
             timeText.text = currentTimerValue.ToString("Time : " + " 0.0 " + "s");
             IncrementScore();
             scoreText.text = (currentScoreValue / 2).ToString("Score :" + " 0");
+        DeathTime();
+        if (joueur == null)
+        {
+            DeathScreen();
         }
+    }
 
         public void IncrementScore()
         {
@@ -59,8 +69,47 @@ public class UIManagerScript : MonoBehaviour
             {
                 currentScoreValue = joueur.transform.position.z;
             }
+
+        }
+    public void DeathTime()
+    {
+
+        if (currentTimerValue <= 0f)
+        {
+            DeathScreen();
+            
         }
     }
+    public void DeathScreen ()
+    {
+        gameOverScreen.SetActive(true);
+
+        if (gameOverScreen.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        else if (!gameOverScreen.activeSelf)
+        {
+            Time.timeScale = 1;
+            Debug.Log("salut");
+        }
+
+    }
+    public void LoadStart()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+} 
    
 
 
