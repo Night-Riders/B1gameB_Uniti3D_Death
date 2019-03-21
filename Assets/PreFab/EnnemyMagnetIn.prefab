@@ -71,26 +71,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863209279767796}
-  m_LocalRotation: {x: 0.17149335, y: -0, z: -0, w: 0.9851853}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.84633, y: 18.84633, z: 18.84633}
+  m_LocalScale: {x: 22, y: 22, z: 22}
   m_Children: []
   m_Father: {fileID: 4441559869101876}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.749, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!4 &4372707026609378
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894514810139528}
-  m_LocalRotation: {x: 0.19779816, y: -0, z: -0, w: 0.9802428}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.890032, y: 18.890034, z: 18.890034}
+  m_LocalScale: {x: 22, y: 22, z: 22}
   m_Children: []
   m_Father: {fileID: 4441559869101876}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 22.816002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!4 &4441559869101876
 Transform:
   m_ObjectHideFlags: 1
@@ -263,10 +263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a7024fbeca237408bc664420d7143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetPower: 300
-  reflectPower: 50
-  magnetEffect: 0
-  maxSpeed: 10
+  attractPower: 300
+  reflectPower: 75
+  magnetEffect: -1
+  player: {fileID: 0}
+  maxSpeed: 15
   minSpeed: 0
   lifeTime: 50
   blueModel: {fileID: 1863209279767796}

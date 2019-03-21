@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnnemyMagnetIn : MonoBehaviour
 {
-    public float magnetPower ;
+    private float magnetPower ;
+    public float attractPower;
     public float reflectPower;
     public int magnetEffect;
+    public GameObject player;
+    private Scr_PlayerMovement playerScript;
+    private int playerMagnetEffect = 1;
 
     public float maxSpeed;
     public float minSpeed;
@@ -26,7 +30,8 @@ public class EnnemyMagnetIn : MonoBehaviour
 
     void Start()
     {
-        
+        player = GameObject.Find("PLayerCtrl");
+        playerScript = player.GetComponent<Scr_PlayerMovement>();
 
         UIManager = GameObject.Find("UI Manager");
 
@@ -34,6 +39,7 @@ public class EnnemyMagnetIn : MonoBehaviour
         {
             blueModel.SetActive(false);
             magnetEffect = 1;
+            magnetPower = attractPower;
         }
         else
         {
@@ -54,7 +60,18 @@ public class EnnemyMagnetIn : MonoBehaviour
 
     void Update()
     {
-        startLife += Time.deltaTime;
+        playerMagnetEffect = playerScript.MagnetEffect;
+
+        if (playerMagnetEffect*magnetEffect == 1)
+        {
+            magnetPower = attractPower;
+        }
+        else if (playerMagnetEffect* magnetEffect == -1)
+        {
+            magnetPower = reflectPower;
+        }
+
+            startLife += Time.deltaTime;
 
         if (startLife > lifeTime)
         {
@@ -65,8 +82,8 @@ public class EnnemyMagnetIn : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")){
-            Debug.Log("enculer");
-            other.GetComponent<Rigidbody>().AddForce(((transform.position-other.transform.position)*magnetPower*Time.deltaTime)*magnetEffect);
+            Debug.Log(magnetPower);
+            other.GetComponent<Rigidbody>().AddForce(((transform.position-other.transform.position)*magnetPower*Time.deltaTime)*magnetEffect*playerMagnetEffect);
         }
     }
 

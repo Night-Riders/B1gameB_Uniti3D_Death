@@ -5,20 +5,34 @@ using UnityEngine;
 public class decorsSpawner : MonoBehaviour {
 
     public GameObject[] decors;
-    public Transform parentTransform;
-	// Use this for initialization
-	void Start () {
-        InvokeRepeating("SpawnDecors", 0f, 0.5f);
-        InvokeRepeating("SpawnDecors", 0f, 1f);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float scoreToGet;
+    private float nextScore;
+    private float currentScore;
+    public UIManagerScript UIManager;
 
-    private void SpawnDecors()
-    {
-        Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.identity);
+    // Use this for initialization
+    void Start() {
+        UIManager = UIManager.GetComponent<UIManagerScript>();
+        nextScore = scoreToGet;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        currentScore = UIManager.currentScoreValue;
+        if (currentScore > nextScore)
+        {
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+            Instantiate(decors[UnityEngine.Random.Range(0, 3)], transform.GetChild(Random.Range(0, transform.childCount)).position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0)));
+
+            nextScore += scoreToGet;
+        }
     }
 }

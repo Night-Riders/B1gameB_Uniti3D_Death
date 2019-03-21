@@ -37,7 +37,7 @@ public class SpawnerManager : MonoBehaviour {
         if (spawnInterval <= 0)
         {
             GenerateEnemy();
-            spawnIntervalStart -= (difficulty/100); 
+            spawnIntervalStart -= (difficulty/50); 
             spawnInterval = spawnIntervalStart;
             Debug.Log(spawnInterval);
         }

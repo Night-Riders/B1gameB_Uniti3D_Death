@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JoueurVie : MonoBehaviour {
 
+    public GameObject UIManager;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +13,9 @@ public class JoueurVie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if ((transform.position.x < -25)||(transform.position.x > 25))
+        {
+            UIManager.GetComponent<UIManagerScript>().DeathScreen();
+        }
 	}
 }

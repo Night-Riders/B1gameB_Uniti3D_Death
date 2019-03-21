@@ -11,7 +11,7 @@ public class Scr_PlayerMovement : MonoBehaviour {
     private GameObject child;
     public static GameObject player;
     public float boost;
-   
+    public int MagnetEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -29,11 +29,15 @@ public class Scr_PlayerMovement : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            movementSpeed += boost;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            movementSpeed -= 10;
+            if (MagnetEffect == 1)
+            {
+                MagnetEffect = -1;
+            }
+            else if (MagnetEffect == -1)
+            {
+                MagnetEffect = 1;
+            }
+
         }
     }
 

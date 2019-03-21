@@ -11,7 +11,6 @@ public class UIManagerScript : MonoBehaviour
 
     public float timerValue = 30f;
     private float currentTimerValue = 0f;
-    public Text timeText;
 
     public float currentScoreValue = 0f;
     public Text scoreText;
@@ -20,6 +19,9 @@ public class UIManagerScript : MonoBehaviour
     public int Life = 5;
    
     public GameObject gameOverScreen;
+    public GameObject Slider;
+
+    private Slider SliderUI;
 
     private void Awake()
     {
@@ -47,15 +49,20 @@ public class UIManagerScript : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+            if (currentTimerValue > 50f)
+        {
+            currentTimerValue = 50f;
+        }
+
             currentTimerValue -= Time.deltaTime;
-            timeText.text = currentTimerValue.ToString("Time : " + " 0.0 " + "s");
             IncrementScore();
-            scoreText.text = (currentScoreValue / 2).ToString("Score :" + " 0");
+            scoreText.text = (currentScoreValue / 2).ToString("0");
         DeathTime();
         if (joueur == null)
         {
             DeathScreen();
         }
+        SliderFunction();
     }
 
         public void IncrementScore()
@@ -112,6 +119,12 @@ public class UIManagerScript : MonoBehaviour
     public void MinusFiveSeconds()
     {
         currentTimerValue -= 5f;
+    }
+
+    private void SliderFunction()
+    {
+        SliderUI = Slider.GetComponent<Slider>();
+        SliderUI.value = currentTimerValue;
     }
 
 } 
