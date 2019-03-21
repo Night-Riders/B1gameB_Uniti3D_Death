@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class decorsDispawn : MonoBehaviour {
 
+    public int distanceToDie;
     private GameObject player;
     private Transform playerTransform;
 
@@ -15,7 +16,7 @@ public class decorsDispawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((playerTransform.position.z + 50 ) > transform.position.x)
+		if ((playerTransform.position.z - distanceToDie) > transform.position.z)
         {
             Destroy(gameObject);
         }

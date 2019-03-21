@@ -10154,3 +10154,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb348f7f4c20cb742855766f74b37dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToDie: 25
