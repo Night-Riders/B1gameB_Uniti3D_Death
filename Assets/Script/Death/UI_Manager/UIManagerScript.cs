@@ -56,7 +56,7 @@ public class UIManagerScript : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        audioComponent.Play();
+        audioComponent.PlayOneShot(musicStart);
 
         if (currentTimerValue > 50f)
         {
