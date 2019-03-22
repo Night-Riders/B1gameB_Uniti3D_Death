@@ -23,6 +23,11 @@ public class UIManagerScript : MonoBehaviour
 
     private Slider SliderUI;
 
+    public AudioSource audioComponent;
+    public AudioClip musicStart;
+    public AudioClip musicLoop;
+    public AudioClip GameOverSound;
+
     private void Awake()
     {
         if (Singleton != null)
@@ -41,6 +46,8 @@ public class UIManagerScript : MonoBehaviour
         currentTimerValue = timerValue;
         Time.timeScale = 1;
         currentTimerValue = timerValue;
+
+        audioComponent.clip = musicStart;
     }
 
 
@@ -49,7 +56,9 @@ public class UIManagerScript : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-            if (currentTimerValue > 50f)
+        audioComponent.Play();
+
+        if (currentTimerValue > 50f)
         {
             currentTimerValue = 50f;
         }

@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1319002332472350}
   m_IsPrefabAsset: 1
+--- !u!1 &1254341605294818
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4842113155414880}
+  - component: {fileID: 108613998626535326}
+  m_Layer: 0
+  m_Name: LightRed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1319002332472350
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,10 +38,27 @@ GameObject:
   - component: {fileID: 23230855319933054}
   - component: {fileID: 65010644182566524}
   - component: {fileID: 114433314030839914}
+  - component: {fileID: 114352966847529306}
   - component: {fileID: 54434646987793710}
-  - component: {fileID: 135088713295763060}
+  - component: {fileID: 135216272029147686}
   m_Layer: 0
   m_Name: EnnemyMagnetIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1594772542640088
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4284578009548578}
+  - component: {fileID: 108980577495340084}
+  m_Layer: 0
+  m_Name: LightBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,10 +107,24 @@ Transform:
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 22, y: 22, z: 22}
-  m_Children: []
+  m_Children:
+  - {fileID: 4284578009548578}
   m_Father: {fileID: 4441559869101876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!4 &4284578009548578
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594772542640088}
+  m_LocalRotation: {x: -0.3420201, y: -0, z: -0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 0.02852899, z: -0.008044053}
+  m_LocalScale: {x: 0.02970885, y: 0.029708851, z: 0.029708851}
+  m_Children: []
+  m_Father: {fileID: 4012609075631130}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4372707026609378
 Transform:
   m_ObjectHideFlags: 1
@@ -87,7 +134,8 @@ Transform:
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 22, y: 22, z: 22}
-  m_Children: []
+  m_Children:
+  - {fileID: 4842113155414880}
   m_Father: {fileID: 4441559869101876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
@@ -98,12 +146,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319002332472350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 8, z: 32}
+  m_LocalPosition: {x: -1.1109653, y: 9, z: 30.66}
   m_LocalScale: {x: 1.53, y: 1.53, z: 1.53}
   m_Children:
   - {fileID: 4012609075631130}
   - {fileID: 4372707026609378}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4842113155414880
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254341605294818}
+  m_LocalRotation: {x: -0.3420201, y: -0, z: -0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 0.02852899, z: -0.008044053}
+  m_LocalScale: {x: 0.029708847, y: 0.029708847, z: 0.029708847}
+  m_Children: []
+  m_Father: {fileID: 4372707026609378}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23147002606773092
@@ -252,6 +313,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!108 &108613998626535326
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254341605294818}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.56078434, g: 0.20392159, b: 0.22352943, a: 1}
+  m_Intensity: 18.11
+  m_Range: 12.1
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!108 &108980577495340084
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594772542640088}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.14117648, g: 0.15686275, b: 0.2392157, a: 1}
+  m_Intensity: 18.11
+  m_Range: 12.1
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &114352966847529306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1319002332472350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb348f7f4c20cb742855766f74b37dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToDie: 20
 --- !u!114 &114433314030839914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,16 +411,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractPower: 300
-  reflectPower: 75
+  reflectPower: 125
   magnetEffect: -1
   player: {fileID: 0}
-  maxSpeed: 15
-  minSpeed: 0
+  maxSpeed: 25
+  minSpeed: 10
   lifeTime: 50
   blueModel: {fileID: 1863209279767796}
   redModel: {fileID: 1894514810139528}
   UIManager: {fileID: 0}
---- !u!135 &135088713295763060
+--- !u!135 &135216272029147686
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,5 +430,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 13.12
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 8.422096
+  m_Center: {x: 0, y: 0.9927089, z: 0}

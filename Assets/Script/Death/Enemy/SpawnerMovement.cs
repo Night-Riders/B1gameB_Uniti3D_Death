@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerMovement : MonoBehaviour {
 
     public Transform playerTransform;
+    public int distanceWithPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,7 @@ public class SpawnerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((playerTransform.position.z + 10 > transform.position.z))
+        if ((playerTransform.position.z + distanceWithPlayer > transform.position.z))
         {
             transform.Translate(0, 0, +2);
         }

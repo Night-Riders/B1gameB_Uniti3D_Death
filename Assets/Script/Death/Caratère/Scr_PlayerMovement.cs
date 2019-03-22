@@ -12,6 +12,8 @@ public class Scr_PlayerMovement : MonoBehaviour {
     public static GameObject player;
     public float boost;
     public int MagnetEffect;
+    public GameObject redParticles;
+    public GameObject blueParticles;
 
 	// Use this for initialization
 	void Start () {
@@ -31,10 +33,14 @@ public class Scr_PlayerMovement : MonoBehaviour {
         {
             if (MagnetEffect == 1)
             {
+                blueParticles.SetActive(false);
+                redParticles.SetActive(true);
                 MagnetEffect = -1;
             }
             else if (MagnetEffect == -1)
             {
+                blueParticles.SetActive(true);
+                redParticles.SetActive(false);
                 MagnetEffect = 1;
             }
 

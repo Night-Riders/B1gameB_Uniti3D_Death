@@ -8,9 +8,10 @@ public class SpawnerManager : MonoBehaviour {
 
     public GameObject ennemi;
     public Transform positionsParent;
+    public GameObject parentSpawn;
 
-    public float spawnInterval;
-    private float spawnIntervalStart;
+    public float spawnInterval = 2;
+    public float spawnIntervalStart;
     private float timeFromStart = 0f;
 
     private float survivedTime = 0f;
@@ -22,9 +23,16 @@ public class SpawnerManager : MonoBehaviour {
 
     public float difficulty;
 
+    private bool isFinished = false;
+    public GameObject SpawnerManagerPrefab;
+
     // Use this for initialization
     void Start()
     {
+        spawnInterval = 2;
+        UIManager = GameObject.Find("UI Manager");
+        parentSpawn = GameObject.Find("ParentSpawner");
+        positionsParent = parentSpawn.transform;
         spawnIntervalStart = spawnInterval;
         UIManagerScript = UIManager.GetComponent<UIManagerScript>();
     }
@@ -34,26 +42,30 @@ public class SpawnerManager : MonoBehaviour {
     {
         spawnInterval -= Time.deltaTime;
 
-        if (spawnInterval <= 0)
+        if (((spawnInterval <= 0.1f)))
         {
             GenerateEnemy();
-            spawnIntervalStart -= (difficulty/50); 
+
+            if (spawnIntervalStart >= 0.5f)
+            {
+                spawnIntervalStart -= (difficulty / 50f) * Time.deltaTime;
+                spawnInterval = spawnIntervalStart;
+            }
             spawnInterval = spawnIntervalStart;
             Debug.Log(spawnInterval);
         }
 
-        currentScore = UIManagerScript.currentScoreValue;
-
-        if (currentScore >= Score)
+        if ((isFinished == false) && (spawnIntervalStart < 0.5))
         {
-            Instantiate(bonusTime, positionsParent.GetChild(Random.Range(0, positionsParent.childCount)).position, Quaternion.identity);
-            Score += 100;
+            Debug.Log("lol");
+            spawnIntervalStart = 2;
+            Instantiate(SpawnerManagerPrefab);
+            isFinished = true;
         }
 
     }
     void GenerateEnemy()
     {
         Instantiate(ennemi, positionsParent.GetChild(Random.Range(0, positionsParent.childCount)).position, Quaternion.identity);
-        Debug.Log("salut");
     }
 }
